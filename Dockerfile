@@ -4,7 +4,7 @@
 # RUN apt-get install -y python3 python3-pip postgresql-plpython3-12 curl
 # RUN pip3 install requests
 # vim:set ft=dockerfile:
-FROM alpine:3.12
+FROM alpine
 
 # RUN apk add python3 py3-pip postgresql-plpython3-12
 # 70 is the standard uid/gid for "postgres" in Alpine
