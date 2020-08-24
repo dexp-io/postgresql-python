@@ -152,6 +152,9 @@ ENV PGDATA /var/lib/postgresql/data
 RUN mkdir -p "$PGDATA" && chown -R postgres:postgres "$PGDATA" && chmod 777 "$PGDATA"
 RUN apk add python3 py3-pip postgresql-plpython3 curl
 RUN pip3 install requests
+RUN ln -s /usr/share/postgresql/extension/plpython3u.control /usr/local/share/postgresql/extension/
+RUN ln -s /usr/share/postgresql/extension/plpython3u--1.0.sql /usr/local/share/postgresql/extension/
+RUN ln -s /usr/lib/postgresql/plpython3.so /usr/local/lib/postgresql/
 
 VOLUME /var/lib/postgresql/data
 
